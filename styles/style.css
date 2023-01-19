@@ -1,0 +1,18 @@
+/* --pale-purple-pantone: #e8d7ffff;
+--mimi-pink: #ffd3e8ff;
+--pale-pink: #ffd7d5ff;
+--nyanza: #f3ffe1ff;
+--nyanza-2: #dfffd6ff; */
+
+.bg-light {
+    background-color: #e8d7ffff!important;
+}
+
+.badge-info {
+    background-color: #ffd3e8ff;
+    color: black
+}
+
+.badge-warning {
+    background-color: #ffd7d5ff
+}
