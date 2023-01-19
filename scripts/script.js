@@ -24,23 +24,32 @@ const renderEvents = (arrayOfEvents) => {
   ul.innerHTML = ""
   arrayOfEvents.forEach((singleEvent) => {
     const { name, description, time, price, _id } = singleEvent
-    ul.innerHTML += `<li class="list-group-item">
-            <h3> ${name} </h3>
+    ul.innerHTML += `<li class="list-group-item w-50">
+    <div class='row align-items-center justify-content-between p-3'>
+      <div class='col col-6'>
+      <h3> ${name} </h3>
             <p> ${description} </p>
-            ${ price !== null
+            ${
+              price !== null
                 ? `<span class="badge badge-pill badge-warning">${price} $</span>`
                 : ""
             }
             <span class="badge badge-pill badge-info">${time}</span>
-            <a href='./backoffice.html?id=${_id}' class='btn btn-primary'> <i class="bi bi-pencil-square"></i> </a>
+      </div> 
+      <div class='col col-6 row justify-content-end'>
+      <a href='./backoffice.html?id=${_id}' class='btn btn-primary'> <i class="bi bi-pencil-square"></i> </a>
             <button class='btn btn-danger' onclick='deleteEvent("${_id}")'> <i class="bi bi-trash-fill"></i> </button>
-            <a href='./details.html?id=${_id}' class='btn btn-info'> <i class="bi bi-arrow-up-right-square-fill"></i> Details </a>
+            <a href='./details.html?id=${_id}' class='btn btn-info rounded-pill'> <i class="bi bi-arrow-up-right-square-fill"></i> Details </a>
+      </div> 
+    </div>
+            
+            
         </li>`
   })
 }
 
 const deleteEvent = async (idToDelete) => {
-    //add confirmation
+  //add confirmation
   try {
     let res = await fetch(url + "/" + idToDelete, {
       method: "DELETE",
@@ -56,8 +65,8 @@ const deleteEvent = async (idToDelete) => {
 }
 
 const handleError = (errorText) => {
-    const alert = document.querySelector(".alert span.alert-text")
-    console.log(alert);
-    alert.innerText = errorText
-    alert.parentElement.classList.replace("d-none", "d-block")
+  const alert = document.querySelector(".alert span.alert-text")
+  console.log(alert)
+  alert.innerText = errorText
+  alert.parentElement.classList.replace("d-none", "d-block")
 }

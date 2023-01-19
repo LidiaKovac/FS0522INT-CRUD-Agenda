@@ -16,3 +16,32 @@
 .badge-warning {
     background-color: #ffd7d5ff
 }
+
+.btn-primary {
+    background-color: #dfffd6ff;
+    color: black;
+    border: 1px solid #dfffd6ff;
+}
+
+.btn-danger {
+    background-color: #ffd7d5ff;
+    color: black;
+    border: 1px solid #ffd7d5ff
+}
+
+.btn-info {
+    background-color: #f3ffe1ff;
+    color: black;
+    border: 1px solid #f3ffe1ff
+}
+
+
+.list-group-item .btn:not(.btn-info) {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.list-group-item .btn, .badge {
+    -webkit-box-shadow: 5px 5px 8px -5px rgb(0,0,0,0.71); 
+    box-shadow: 5px 5px 8px -5px rgb(0,0,0,0.71);
+}
