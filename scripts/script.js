@@ -37,9 +37,9 @@ const renderEvents = (arrayOfEvents) => {
             <span class="badge badge-pill badge-info">${time}</span>
       </div> 
       <div class='col col-6 row justify-content-end'>
-      <a href='./backoffice.html?id=${_id}' class='btn btn-primary'> <i class="bi bi-pencil-square"></i> </a>
-            <button class='btn btn-danger' onclick='deleteEvent("${_id}")'> <i class="bi bi-trash-fill"></i> </button>
-            <a href='./details.html?id=${_id}' class='btn btn-info rounded-pill'> <i class="bi bi-arrow-up-right-square-fill"></i> Details </a>
+      <a href='./backoffice.html?id=${_id}' class='btn btn-primary m-1'> <i class="bi bi-pencil-square"></i> </a>
+            <button class='btn btn-danger m-1' onclick='deleteEvent("${_id}")'> <i class="bi bi-trash-fill"></i> </button>
+            <a href='./details.html?id=${_id}' class='btn btn-info rounded-pill m-1'> <i class="bi bi-arrow-up-right-square-fill"></i> Details </a>
       </div> 
     </div>
             

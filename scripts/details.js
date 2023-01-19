@@ -18,21 +18,31 @@ const id = params.get("id")
 window.onload = async () => {
   try {
     const res = await fetch(`${url}/${id}`) //GET
-    const { name, description, price, time, _id, createdAt, updatedAt } = await res.json()
+    const { name, description, price, time, _id, createdAt, updatedAt } =
+      await res.json()
     const container = document.querySelector(".container")
     container.innerHTML += `<div class="card">
-    <div class="card-header">
+    <div class="card-header bg-light text-capitalize">
       ${name}
     </div>
     <div class="card-body">
-      <h5 class="card-title">Your event is at: ${time.replace("T", " ").replace(".000Z", "")}</h5>
-      <p class="card-text">${description}</p>
-      <button class='btn btn-success rounded-pill'> Your event is ${price ? price + "$" : "FREE"} </button>
-      <div class='d-flex flex-column justify-content-center w-50'> 
-      <span class="badge badge-pill badge-light m-1">created: ${createdAt}</span>
-      <span class="badge badge-pill badge-dark m-1">updated: ${updatedAt}</span>
-      <span class="badge badge-pill badge-secondary m-1">id: ${_id}</span>
-      </div>
+    <div class='row align-items-center'>
+      <div class='col col-8'>
+        <h5 class="card-title">Your event is at: ${time
+          .replace("T", " ")
+          .replace(".000Z", "")}</h5>
+        <p class="card-text text-capitalize">${description}</p>
+        <button class='btn btn-success rounded-pill'> Your event is ${
+          price ? price + "$" : "FREE"
+        } </button>
+       </div>
+      <div class='col col-4'>
+        <span class="badge badge-pill badge-light m-1">created: ${createdAt}</span>
+        <span class="badge badge-pill badge-dark m-1">updated: ${updatedAt}</span>
+        <span class="badge badge-pill badge-secondary m-1">id: ${_id}</span>
+       </div>
+
+    </div>
     </div>
   </div>`
   } catch (error) {

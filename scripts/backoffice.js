@@ -145,4 +145,5 @@ const handleError = (errorText) => {
 const successAlert = () => {
   const alert = document.querySelector(".alert-success")
   alert.classList.add("show")
+  alert.classList.remove("d-none")
 }
